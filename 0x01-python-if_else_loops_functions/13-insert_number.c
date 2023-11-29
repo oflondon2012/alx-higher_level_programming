@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 /**
  * insert_node - function that insert a number into sorted linked list
  * @head: list head
@@ -8,7 +8,7 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t newnode, start;
+	listint_t *newnode, *start;
 
 	start = *head;
 	newnode = malloc(sizeof(listint_t));
