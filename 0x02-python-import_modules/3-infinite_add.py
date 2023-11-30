@@ -6,6 +6,6 @@ if __name__ == "__main__":
     arglen =  len(argv) - 1
     if (arglen != 0):
         while (count <= arglen):
-            infinit = infinit + int(argv[count])
-            count = count + 1
+            infinit += int(argv[count])
+            count += 1
     print(infinit)
