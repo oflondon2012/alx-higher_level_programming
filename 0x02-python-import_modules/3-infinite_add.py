@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def addarg(argv):
     arglen = len(argv) - 1
     if arglen == 0:
@@ -13,7 +14,7 @@ def addarg(argv):
             count += 1
         print("{:d}".format(sum))
 
+
 if __name__ == "__main__":
     import sys
     addarg(sys.argv)
-
