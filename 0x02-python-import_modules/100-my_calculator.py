@@ -16,8 +16,8 @@ if (__name__ == "__main__"):
         exit(1)
 
     a = int(argv[1])
-    b = int(argv[3])
     oprand = arg[2]
+    b = int(argv[3]):w
 
     if (oprand == "+"):
         ret = add(a, b)
