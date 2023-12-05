@@ -1,6 +1,4 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 #include <Python.h>
 /**
  * print_python_list_info - function that print some basic python info
@@ -8,33 +6,19 @@
  */
 void print_python_list_info(PyObject *p)
 {
-	int size, alloc, i;
-	PyObject *obj;
+	long int size, i;
+	PyListObject *list;
+	PyObject *item;
 
-	if (!PyList_Check(p))
-	{
-		PyErr_SetString(PyExc_TypeError, "Object is not a list");
-		return;
-	}
+	size = Py_SIZE(p);
+	printf("[*] Size of the Python List = %ld\n", size);
 
-	size = PyList_Size(p);
-	alloc = ((PyListObject *)p)->allocated;
-
-	printf("[*] Size of the Python List = %d\n", size);
-	printf("[*] Allocated = %d\n", alloc);
+	list = (PyListObject *)p;
+	printf("[*] Allocated = %ld\n", list->allocated);
 
 	for (i = 0; i < size; i++)
 	{
-		printf("Element %d: ", i);
-
-		obj = PyList_GetItem(p, i);
-		if (obj != NULL)
-		{
-			printf("%s\n", Py_TYPE(obj)->tp_name);
-		}
-		else
-		{
-			PyErr_Print();
-		}
+		item = PyList_GetItem(p, i);
+		printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
 	}
 }
