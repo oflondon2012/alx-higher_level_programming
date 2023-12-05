@@ -16,7 +16,7 @@ listint_t *reverse_list(listint_t **start)
 		next = (*start)->next;
 		(*start)->next = prev;
 		prev = *start;
-		*start - next;
+		*start = next;
 	}
 	return (prev);
 }
@@ -26,13 +26,13 @@ listint_t *reverse_list(listint_t **start)
  *
  * Return: (1) if palindrome else 0
  */
-int is_palindrome(listint_t **start)
+int is_palindrome(listint_t **head)
 {
-	listint_t *s_half, *fast = *start;
-	listint_t lotion = *start, *prev = *start;
+	listint_t *s_half, *fast = *head;
+	listint_t *lotion = *head, *prev = *head;
 	int is_pal = 1;
 
-	if (*start != NULL && (*start)->next != NULL)
+	if (*head != NULL && (*head)->next != NULL)
 	{
 		while (fast != NULL && fast->next != NULL)
 		{
@@ -47,12 +47,12 @@ int is_palindrome(listint_t **start)
 
 		while (lotion != NULL)
 		{
-			if ((*start)->n != lotion->n)
+			if ((*head)->n != lotion->n)
 			{
 				is_pal = 0;
 				break;
 			}
-			*start = (*start)->next;
+			*head = (*head)->next;
 			lotion = lotion->next;
 		}
 
