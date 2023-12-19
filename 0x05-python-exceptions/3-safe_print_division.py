@@ -4,10 +4,9 @@ def safe_print_division(a, b):
         result = a / b
     except ZeroDivisionError:
         return None
-    except Exception:
-        return None
     finally:
-        if 'result' in locals():
+        try:
             print("Inside result: {}".format(result))
-        else:
+        except UnboundLocalError:
             print("Inside result: None")
+    return result
