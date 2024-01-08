@@ -2,9 +2,9 @@
 """Defines an inherited list class Mylist"""
 
 
-class Mylist(list):
+class MyList(list):
     """This module inherit from list"""
 
-    def print_sortlist(self):
+    def print_sorted(self):
         """print the sorted list"""
         print(sorted(self))
