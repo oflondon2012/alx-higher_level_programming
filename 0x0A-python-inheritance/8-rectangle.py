@@ -2,7 +2,7 @@
 """Defines a base geometry class"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """Checks whether or not object is subclass"""
 
     def area(self):
