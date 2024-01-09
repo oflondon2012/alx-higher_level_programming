@@ -2,6 +2,6 @@
 """Module for empty class"""
 
 
-def BaseGeometry(object):
+class BaseGeometry():
     """Empty class """
     pass
