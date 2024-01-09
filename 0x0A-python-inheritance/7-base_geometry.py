@@ -2,7 +2,7 @@
 """Module BaseGeometry which have 2 methods"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """Implement the properties"""
 
     def area(self):
