@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A rectangle class"""
+"""A square class use to calculate square"""
 from models.rectangle import Rectangle
 
 
