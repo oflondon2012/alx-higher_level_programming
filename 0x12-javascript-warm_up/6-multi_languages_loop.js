@@ -1,4 +1,5 @@
 #!/usr/bin/node
-for (const mess of ['C is fun', 'Python is cool', 'Javascript is amazing']) {
-  console.log(mess);
+const mess = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+for (let j = 0; j < mess.length; j++) {
+  console.log(mess[j]);
 }
