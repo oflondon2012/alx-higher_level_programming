@@ -17,4 +17,15 @@ module.exports = class Rectangle {
       row = '';
     }
   }
+
+  rotate () {
+    const teme = this.width;
+    this.width = this.height;
+    this.height = teme;
+  }
+
+  double () {
+    this.width = this.width * 2;
+    this.heigth = this.heigth * 2;
+  }
 };
