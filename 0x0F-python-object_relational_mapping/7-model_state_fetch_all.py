@@ -20,8 +20,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).order_by(State.id).all()
-    num = 1
     for state in states:
-        print(f"{num}: {state.name}")
-    num = num + 1
+        print("{}: {}".format(state.id, state.name))
     session.close()
