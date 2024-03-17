@@ -15,7 +15,7 @@ def state():
     db_port = 3306
     try:
         db_conn = MySQLdb.connect(host=db_host, port=db_port, user=db_user,
-                passwd=db_pass, db=db_name, charset="utf8")
+                                  passwd=db_pass, db=db_name, charset="utf8")
         cursor = db_conn .cursor()
         query = "SELECT * FROM states WHERE CONVERT(name USING Latin1)"
         query += "COLLATE Latin1_General_CS REGEXP '^N' ORDER BY id ASC"
@@ -27,6 +27,7 @@ def state():
         db_conn.close()
     except Exception:
         pass
+
 
 if __name__ == "__main__":
     state()
