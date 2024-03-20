@@ -24,11 +24,10 @@ def state():
                 pool_pre_ping=True)
         Session = sessionmaker(bind=engine)
         session = Session()
-        stat = session.query(State).filter(state.name.like("%a%"))
-        .order_by(State.id).all()
-
-        for state in stat
-        print("{}: {}".format(state.id, state.name))
+        states = session.query(State).filter(State.name.like("%a%")).order_by(
+                 State.id).all()
+        for state in states:
+            print("{}: {}".format(state.id, state.name))
         session.close()
     except Exception:
         pass
