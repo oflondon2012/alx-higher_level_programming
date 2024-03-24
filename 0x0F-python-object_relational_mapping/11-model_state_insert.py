@@ -22,7 +22,7 @@ def state():
              .format(db_user, db_pass, db_host, db_name),
              pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    session = Session(engine)
+    Session = sessionmaker(bind=engine)
     state = State(name='Louisiana')
     session.add(state)
     session.commit()
