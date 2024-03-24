@@ -25,11 +25,11 @@ def state():
                 pool_pre_ping=True)
         Session = sessionmaker(bind=engine)
         session = Session()
-        state = session.query(State).filter(State.name == search_arg).first()
-        if state:
-            print("{}".format(state.id,))
+        states = session.query(State).filter(State.name == search_arg).first()
+        if states:
+            print(states.id)
         else:
-            print("Nothing")
+            print("Not found")
         session.close()
     except Exception:
         pass
