@@ -19,7 +19,7 @@ def state():
 
     try:
         engine = create_engine(
-                'mysql+mysqldb://{}:{}@{}:3306/{}'
+                'mysql+mysqldb://{}:{}@{}/{}'
                 .format(db_user, db_pass, db_host, db_name),
                 pool_pre_ping=True)
         Base.metadata.create_all(engine)
