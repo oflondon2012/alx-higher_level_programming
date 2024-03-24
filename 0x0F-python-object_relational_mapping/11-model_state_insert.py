@@ -6,7 +6,7 @@
 """
 from sys import argv
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 
@@ -17,23 +17,20 @@ def state():
     db_name = argv[3]
     db_host = "localhost"
 
-    try:
-        engine = create_engine(
-                'mysql+mysqldb://{}:{}@{}/{}'
-                .format(db_user, db_pass, db_host, db_name),
-                pool_pre_ping=True)
-        Base.metadata.create_all(engine)
-        session = Session(engine)
-        states = State(name='Louisiana')
-        session.add(state)
-        session.commit()
-        if states:
-            print(states.id)
-        else:
-            print("Not found")
-        session.close()
-    except Exception:
-        pass
+    engine = create_engine(
+             'mysql+mysqldb://{}:{}@{}/{}'
+             .format(db_user, db_pass, db_host, db_name),
+             pool_pre_ping=True)
+    Base.metadata.create_all(engine)
+    session = Session(engine)
+    state = State(name='Louisiana')
+    session.add(state)
+    session.commit()
+    if state:
+        print(state.id)
+    else:
+        print("Not found")
+    session.close()
 
 
 if __name__ == "__main__":
