@@ -18,7 +18,7 @@ def main():
     db_host = "localhost"
 
     engine = create_engine(
-            'mysql+mysqldb://{}:{}@{}:3306/{}'
+            'mysql+mysqldb://{}:{}@{}/{}'
              .format(db_user,
                      db_password, db_host, db_db),
              pool_pre_ping=True)
