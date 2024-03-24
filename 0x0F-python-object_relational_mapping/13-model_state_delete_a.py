@@ -18,7 +18,7 @@ def main():
     db_host = "localhost"
 
     engine = create_engine(
-             'mysql+mysqldb://{}:{}@{}3306/{}'
+            'mysql+mysqldb://{}:{}@{}:3306/{}'
              .format(db_user,
                      db_password, db_host, db_db),
              pool_pre_ping=True)
@@ -28,8 +28,8 @@ def main():
     states = session.query(State).filter(State.name.like('%a%')).all()
     for state in states:
         session.delete(state)
-        session.commit()
-        session.close()
+    session.commit()
+    session.close()
 
 
 if __name__ == "__main__":
