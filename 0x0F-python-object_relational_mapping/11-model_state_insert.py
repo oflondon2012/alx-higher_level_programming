@@ -22,8 +22,8 @@ def state():
                 'mysql+mysqldb://{}:{}@{}:3306/{}'
                 .format(db_user, db_pass, db_host, db_name),
                 pool_pre_ping=True)
-        Session = sessionmaker(bind=engine)
-        session = Session()
+        Base.metadata.create_all(engine)
+        session = Session(engine)
         states = State(name='Louisiana')
         session.add(state)
         session.commit()
