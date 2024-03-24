@@ -19,9 +19,9 @@ def main():
 
     engine = create_engine(
             'mysql+mysqldb://{}:{}@{}/{}'
-             .format(db_user,
-                     db_password, db_host, db_db),
-             pool_pre_ping=True)
+            .format(db_user,
+                    db_password, db_host, db_db),
+            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
