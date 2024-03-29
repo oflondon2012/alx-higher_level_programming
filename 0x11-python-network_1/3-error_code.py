@@ -13,5 +13,5 @@ if __name__ == "__main__":
         with request.urlopen(sys.argv[1]) as response:
             html = response.read()
             print(html.decode('utf-8'))
-            except error.HTTPError as exce:
-                print('Error code: {}'.format(exce.code))
+            except error.HTTPError as ex:
+                print('Error code: {}'.format(ex.code))
